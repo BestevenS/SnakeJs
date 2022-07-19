@@ -34,6 +34,8 @@ function draw(){
         frameRate(20 + score);
     }
 
+    console.log("myFood: " + myFood.x, myFood.y);
+
     mySnake.moveQueue();
 
 

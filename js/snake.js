@@ -13,31 +13,33 @@ function Snake(){
     this.move = function(){
         if(this.direction == "left"){
             this.x -= movement;
-            if(this.x == 0){
+            if(this.x <= 0){
                 this.x = canvasSize;
             }
         }
         
         else if(this.direction == "right"){
             this.x += movement;
-            if(this.x == canvasSize){
+            if(this.x >= canvasSize){
                 this.x = 0;
             }
         }
 
         else if(this.direction == "up"){
             this.y -= movement;
-            if(this.y == 0){
-                this.y = canvasSize;
+            if(this.y <= 0 ){
+                this.y = canvasSize ;
             }
         }
         
         else if(this.direction == "down"){
             this.y += movement;
-            if(this.y == canvasSize){
+            if(this.y >= canvasSize){
                 this.y = 0;
             }
         }
+        
+        console.log("snake: " + this.x, this.y);
     }
 
     this.moveQueue = function(){
@@ -53,7 +55,7 @@ function Snake(){
         fill(255);
         ellipse(this.x, this.y, definition, definition);
 
-        console.log(this.x, this.y);
+        // console.log(this.x, this.y);
 
         this.queue.forEach(function(element){
             ellipse(element.x, element.y, definition, definition);

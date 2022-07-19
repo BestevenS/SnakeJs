@@ -10,7 +10,6 @@ function Food(){
             this.x = Math.floor(Math.random() * gridLines) * movement;
             this.y = Math.floor(Math.random() * gridLines) * movement;
         }
-        
     }
 
     this.draw = function(){
