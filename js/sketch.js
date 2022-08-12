@@ -1,5 +1,6 @@
 let mySnake, myFood, canvasSize = 600, 
-    movement = 10, score = 0, foodDefinition = 13;
+    movement = 10, score = 0, foodDefinition = 13, 
+    initialFrameRate = 20;
 
 // Some insersions for the setup like framerate etc.
 function setup(){
@@ -9,7 +10,7 @@ function setup(){
     myFood = new Food();
     myFood.create();
 
-    frameRate(20);
+    frameRate(initialFrameRate);
 }
 
 // It's the loop(if(game)->gameloop)
@@ -31,7 +32,7 @@ function draw(){
         mySnake.expand(myFood.x, myFood.y);
         myFood.create();
         score++;
-        frameRate(20 + score);
+        frameRate(initialFrameRate + score);
     }
 
     console.log("myFood: " + myFood.x, myFood.y);
